@@ -28,14 +28,7 @@ export class UserComponent implements OnInit {
 
   onSubmit() {
     console.log(this.userForm.value);
-}
-
-  
-  createUser(){
-    
-  }
-  
-
+} 
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
