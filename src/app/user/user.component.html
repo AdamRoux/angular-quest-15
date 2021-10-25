@@ -1,0 +1,66 @@
+<form [formGroup]="userForm" (ngSubmit)='onSubmit()'>
+    <div>
+        <div>
+        <label>
+        Username:
+        <input type="text" formControlName="username">
+        </label>
+    </div>
+    <div formGroupName='credentials'>
+    <div>
+        <label>
+        Email:
+          <input type="email" formControlName="email">
+        </label>
+    </div>
+    <div>
+        <label>
+        Password:
+          <input type="password" formControlName="password">
+        </label>
+    </div>
+    </div>
+    
+        <label>
+         <!-- address est le nom du FormGroup imbriqué -->
+    <div >
+        <div formGroupName="address">
+            <div>
+            <label>
+                Street:
+                <!--
+                     "street" correspond à la propriété street du FormGroup address
+                     contenu dans le FormGroup userForm
+                -->
+                <input type="text" formControlName="street">
+            </label>
+            </div>
+
+        <div>
+            <label>
+                City:
+                <!--
+                     "city" correspond à la propriété city du FormGroup address
+                     contenu dans le FormGroup userForm
+                -->
+                <input type="text" formControlName="city">
+            </label>
+        </div>
+
+        <div>
+            <label>
+                Zip code:
+                <!--
+                     "zipCode" correspond à la propriété zipCode du FormGroup address
+                     contenu dans le FormGroup userForm
+                -->
+                <input type="text" formControlName="zip">
+            </label>
+        </div>
+    </div>
+        <button type="submit" [disabled]="!userForm.valid">Inscription</button>
+
+    
+   
+
+
